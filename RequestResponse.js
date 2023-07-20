@@ -1,22 +1,14 @@
-const url = require('http');
-console.log(url);
+const http = require('http');
 
-const server = url.createServer((req, res) => {
-    if (url === '/home') {
-        const a='Welcome home';
-        console.log('Welcome home');
-        res.end(a);
-    } else if (url === '/about') {
-        const b='Welcome to About Us page';
-        console.log('Welcome to About Us page');
-        res.end(b);
-    } else if (url === '/node') {
-        const c='Welcome to my Node Js project';
-        console.log('Welcome to my Node Js project');
-        res.end(c);
+const server = http.createServer((req, res) => {
+    if (req.url === "/home") {
+        res.end("Welcome home");
+    } else if (req.url === "/about") {
+        res.end("Welcome to About Us page");
+    } else if (req.url === "/node") {
+        res.end("Welcome to my Node Js project");
     } else {
-        console.log('Invalid URL');
+        res.end("Invalid URL");
     }
 });
-  
   server.listen(4000);
