@@ -5,7 +5,7 @@
   "main": "Arrays,spreadandrestoperators.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node CleanUp1.js",
+    "start": "nodemon CleanUp1.js",
     "start-server": "node CleanUp1.js"
   },
   "author": "",
