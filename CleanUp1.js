@@ -2,7 +2,8 @@ const path = require('path');
 const http = require('http');
 
 const express = require('express');
-const Some_var = express();
+const Some_var = express(); 
+const ErrorController = require('./Controllers/Error');
 
 const bodyParser = require('body-parser');
 
@@ -19,9 +20,7 @@ Some_var.use(shopRouters);
 Some_var.use(ContactRouters);
 Some_var.use(SuccessRouters);
 
-Some_var.use((req,res,next)=>{
-    res.status(404).sendFile(path.join(__dirname,'Views','404.html'));
-});
+Some_var.use(ErrorController.ErrorPage);
 
 
 const server = http.createServer(Some_var);  
