@@ -17,10 +17,6 @@ const server = http.createServer((req,res)=>{
                 res.write(`<p>${message}</p>`);
             }
         });
-
-        res.write('</body>');
-        res.write('</html>');
-
         return res.end();
     }
 
@@ -41,7 +37,6 @@ const server = http.createServer((req,res)=>{
             res.setHeader('Location', '/');
             return res.end();
         });
-        return res.end();
     }
 
     res.setHeader('Content-Type', 'text/html');

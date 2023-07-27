@@ -8,13 +8,13 @@ exports.getAddProduct=(req,res,next)=>{
 }
 
 exports.postAddProduct=(req,res,next)=>{
-    const product = new product(req.body.title);
-    product.save();
+    const product1 = new product(req.body.title);
+    product1.save();
     res.redirect('/');
 }
 
 exports.getProduct=(req,res,next)=>{
-    const product1 = product.fetchAll();
+    const product2 = product.fetchAll();
     res.sendFile(path.join(rootDir,'Views','Shop.html'));
 }
 
