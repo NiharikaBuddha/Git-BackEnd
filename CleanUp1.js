@@ -4,6 +4,7 @@ const http = require('http');
 const express = require('express');
 const Some_var = express(); 
 // const ErrorController = require('./Controllers/Error');
+const db =require('./util/database').then().catch();
 
 const bodyParser = require('body-parser');
 
@@ -11,6 +12,8 @@ const adminRouters = require('./Routers/Admin');
 const shopRouters = require('./Routers/Shop');
 const  ContactRouters = require('./Routers/ContactUs');
 const  SuccessRouters = require('./Routers/Success');
+
+db.exectue('')
 
 Some_var.use(bodyParser.urlencoded({extended: false}));
 Some_var.use(express.static(path.join(__dirname,'public')))
@@ -20,6 +23,7 @@ Some_var.use(adminRouters);
 Some_var.use(shopRouters);
 Some_var.use(ContactRouters);
 Some_var.use(SuccessRouters);
+
 
 // Some_var.use(ErrorController.ErrorPage);
 
