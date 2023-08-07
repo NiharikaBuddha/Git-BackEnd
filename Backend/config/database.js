@@ -1,14 +1,6 @@
-// const Sequelize=require('sequelize');
-
-// const sequelize=new Sequelize('node-complete','root','Vijay#2000',{
-//     dialect:'mysql',
-//     host:'localhost'
-// });
-
-// module.exports=sequelize;
 const { Sequelize } = require('sequelize');
 
-const sequelize = new Sequelize('task-19', 'root', 'Vijay#2000', {
+const sequelize = new Sequelize('sakila', 'root', '10509037@Niha', {
   host: 'localhost',
   dialect: 'mysql',
 });

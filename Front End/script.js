@@ -4,12 +4,12 @@ var ul = document.getElementById("ullist");
 
 form.addEventListener("submit", adding = function (e) {
   e.preventDefault();
-  var expense= document.getElementById("expense").value;
+  var expense_amount = document.getElementById("expense").value;
   var description = document.getElementById("description").value;
   var category=document.getElementById("category").value;
 
   let obj = {
-    expense_amount: expense,
+    expense_amount: expense_amount,
     description: description,
     category:category
   };
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     const response = await axios.get(
       "http://localhost:3000/api/users"
     );
-      console.log("getting all users=",response.data);
+
     for (let i = 0; i < response.data.length; i++) {
       showOutput(response.data[i], response.data[i].id);
     }
@@ -55,7 +55,7 @@ function showOutput(obj, obj_id) {
 
   var list = document.createElement("li");
 
-  list.appendChild(document.createTextNode(obj.expense_amount+ " - " + obj.description + "-" +obj.category+ " "));
+  list.appendChild(document.createTextNode(obj.expense + " - " + obj.description + "-" +obj.category+ " "));
 
   var deletebtn = document.createElement("button");
   deletebtn.className = "delete";
@@ -86,9 +86,7 @@ ul.addEventListener('click', removeitem = function (e) {
     var id = li.getAttribute('data-id');
     console.log("id=", id);
 
-    document.getElementById("expense").value='';
-    document.getElementById("description").value='';
-    document.getElementById("category").value='';
+
 
     async function deleteData() {
       try {
@@ -117,9 +115,9 @@ ul.addEventListener('click', removeitem = function (e) {
     var id = li.getAttribute('data-id');
     console.log("id=", id);
 
-    document.getElementById("expense").value=arr[0];
-    document.getElementById("description").value=arr[1];
-    document.getElementById("category").value=arr[2];
+    document.getElementById("name").value=arr[0];
+    document.getElementById("email").value=arr[1];
+    document.getElementById("phone").value=arr[2];
 
     async function editData() {
       try {
@@ -138,6 +136,7 @@ ul.addEventListener('click', removeitem = function (e) {
   }
 
 });
+
 
 
 

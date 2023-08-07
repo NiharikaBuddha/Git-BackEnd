@@ -12,12 +12,13 @@ exports.getUsers = async (req, res) => {
 
 // Create a user
 exports.createUser = async (req, res) => {
-  const name = req.body.name;
-  const email=req.body.email;
-  const phone=req.body.phone;
+  // const id = req.body.id;
+  const expense_amount=req.body.expense_amount;
+  const description=req.body.description;
+  const category=req.body.category;
 
   try {
-    const newUser = await User.create({ expense_amount:name, description:email, category:phone });
+    const newUser = await User.create({expense_amount:expense_amount, description:description, category:category });
     res.json(newUser);
   } catch (error) {
     console.log("errooorr");

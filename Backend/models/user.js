@@ -1,32 +1,57 @@
-const { Sequelize, DataTypes } = require('sequelize');
-const sequelize = require('../config/database');
+// const { Sequelize, DataTypes } = require('sequelize');
+// const sequelize = require('../config/database');
 
-const Expense = sequelize.define('Expense', {
-  id: {
-    type: DataTypes.INTEGER,
-    autoIncrement: true,
-    primaryKey: true
-  },
+// const User = sequelize.define('user', {
+//   id: {
+//     type: DataTypes.INTEGER,
+//     autoIncrement: true,
+//     primaryKey: true
+//   },
+//   expense_amount: {
+//     type: DataTypes.FLOAT,
+//     allowNull: false
+//   },
+//   description: {
+//     type: DataTypes.STRING,
+//     allowNull: false
+//   },
+//   category: {
+//     type: DataTypes.STRING,
+//     allowNull: false
+//   },
+//   createdAt: {
+//     type: DataTypes.DATE,
+//     allowNull: false
+//   },
+//   updatedAt: {
+//     type: DataTypes.DATE,
+//     allowNull: false
+//   }
+// });
+
+// module.exports = User;
+
+const Sequelize=require('sequelize');
+const db = require("../config/database");
+
+const User = db.define('user', {
+  // id: {
+  //   type: Sequelize.STRING,
+  //   allowNull: false,
+  // },
   expense_amount: {
-    type: DataTypes.FLOAT,
-    allowNull: false
+    type: Sequelize.STRING,
+    allowNull: false,
   },
   description: {
-    type: DataTypes.STRING,
-    allowNull: false
+    type: Sequelize.STRING,
+    allowNull: false,
   },
   category: {
-    type: DataTypes.STRING,
-    allowNull: false
-  },
-  createdAt: {
-    type: DataTypes.DATE,
-    allowNull: false
-  },
-  updatedAt: {
-    type: DataTypes.DATE,
-    allowNull: false
+    type: Sequelize.STRING,
+    allowNull: false,
   }
 });
 
-module.exports = Expense;
+module.exports = User;
+
